@@ -31,3 +31,6 @@ source .env
 
 ### 5. Run the Poky layer for for the I.MX95
 Read the instruccions in `005-build-core-image-minimal.md`
+
+### 6. Test the CAN protocol
+Read the instruccions in `006-test-CAN-protocol.md`
