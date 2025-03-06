@@ -31,7 +31,7 @@ Enable the drivers:
 
 ```
 
-Save the `.conf` file and load the changes. After that, compile Bitbake kernel with
+Save the `.config` file and load the changes. After that, compile Bitbake kernel with
 the new configuration:
 
 ```bash
@@ -54,11 +54,6 @@ char device redirected to /dev/pts/4
 ```
 
 Open another 2 terminals and access to the redirections:
-
-```bash
-char device redirected to /dev/pts/3
-char device redirected to /dev/pts/4
-```
 
 First terminal:
 ```bash
