@@ -33,4 +33,7 @@ source .env
 Read the instruccions in `005-build-core-image-minimal.md`
 
 ### 6. Test the CAN protocol
-Read the instruccions in `006-test-CAN-protocol.md`
+Read the instruccions in `006-test-can-protocol.md`
+
+### 6. Test the GPIO simulation
+Read the instruccions in `007-test-gpio-simulation.md`
