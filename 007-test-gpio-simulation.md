@@ -210,3 +210,41 @@ cat /sys/kernel/debug/gpio
   #  gpio-514 (pin_2               )
   #  gpio-515 (pin_3               |testing_pin_3       ) out lo
 ```
+
+**Note:** Modify the path of the device folder
+
+`configfs` is a virtual file system in Linux that allows dynamic configuration
+of kernel subsystems. `configfs` is specifically used to create and
+configure kernel objects at runtime.
+
+
+This allows to test GPIO functionality without the need for real hardware, as
+`gpio-sim` registers itself as a GPIO driver and exposes the device in `/dev/`
+as `gpiochipX`.
+
+By default, the `configfs` folder is mounted in `/sys/kernel/config`
+
+```shell
+mount | grep configfs
+  # configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+```
+
+Unmount the `configfs` path:
+
+```shell
+umount /sys/kernel/config
+```
+
+Now, create the new folder and mount the `configfs` path
+
+```shell
+mkdir -p /mnt/config
+mount -t configfs -o rw,nosuid,nodev,noexec,relatime configfs /mnt/config
+```
+
+Verify the configfs path:
+
+```shell
+mount | grep configfs
+  # configfs on /mnt/config type configfs (rw,nosuid,nodev,noexec,relatime)
+```
